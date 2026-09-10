@@ -15,7 +15,7 @@ const pay = () => {
     payjp.createToken(numberElement).then(function (response) {
 
       if (response.error) {
-        return;
+       return;
       } else {
         const token = response.id;
         const renderDom = document.getElementById("charge-form");
@@ -32,4 +32,5 @@ const pay = () => {
   });
 };
 
-window.addEventListener("load", pay);
+window.addEventListener("turbo:load", pay);
+window.addEventListener("turbo:render", pay);
